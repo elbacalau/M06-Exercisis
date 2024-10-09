@@ -57,7 +57,7 @@ async function fetchData() {
                     <td>${character.index}</td>
                     <td>${character.name}</td>
                     <td class="desc-item">${character.description}</td>
-                    <td><img src="${character.image}" style="width: 50px; height: auto;" /></td>
+                    <td><img src="${character.image}" style="width: 80px; height: auto;" /></td>
                     <td><button class="delete-btn" onClick="deleteChar(this)">Borrar</button></td>
                 </tr>
             `;

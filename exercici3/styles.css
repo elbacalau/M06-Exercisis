@@ -52,7 +52,7 @@ td img {
 }
 
 td img:hover {
-    transform: scale(1.2); 
+    transform: scale(1.4); 
 }
 
 .dataTables_wrapper .dataTables_paginate {
