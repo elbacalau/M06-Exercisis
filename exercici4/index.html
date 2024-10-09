@@ -12,8 +12,47 @@
         <h1>Exercici 4 - Factura</h1>
       </div>
 
+      <div class="data-container">
+        <form action="" class="form-ctn">
+          <input
+            type="text"
+            id="customer"
+            placeholder="Customer Name"
+            required
+          />
+          <input type="text" id="address" placeholder="Full Address" required />
+          <input type="text" id="city" placeholder="City Name" required />
+          <input type="number" id="number" placeholder="Inv. No" required />
+          <input type="date" id="date" placeholder="Inv. Date" required />
+        </form>
+      </div>
 
+      <div class="tabla-calc">
+        <table id="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Particular</th>
+              <th>Qty</th>
+              <th>Rate</th>
+              <th>Amount</th>
+              <th><button onclick="" class="btn-th">+</button></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
 
+        <div class="ctn-calc" id="result-ctn">
+          <label for="nombre">Total:</label>
+          <input type="text" id="total" />
+
+          <label for="nombre">GST:</label>
+          <input type="text" id="discount" />
+
+          <label for="nombre">Net Amt:</label>
+          <input type="text" id="net-amount" />
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
