@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoices</title>
+   
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"
+    />
+
+   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style_invoice.css">
+    
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Factures Guardades</h1>
+      <div>
+        <button class=".btn-factures" onclick="window.location.href='index.html'">Atras</button>
+      </div>
+    </div>
+
+    <table id="invoices-table" class="display">
+      <thead>
+        <tr>
+          <th>Cliente</th>
+          <th>Dirección</th>
+          <th>Ciudad</th>
+          <th>Factura No</th>
+          <th>Fecha</th>
+          <th>Total</th>
+          <th>Descuento</th>
+          <th>Neto</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script src="script_invoices.js"></script>
+  </body>
+</html>

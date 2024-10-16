@@ -10,6 +10,9 @@
     <div>
       <div class="title-ctn">
         <h1>Exercici 4 - Factura</h1>
+        <div>
+            <button onclick="window.location.href='invoices.html'" class="btn-factures">Veure Factures</button>
+        </div>
       </div>
 
       <div class="data-container">
@@ -44,7 +47,7 @@
 
         <div class="ctn-calc" id="result-ctn">
           <label for="nombre">Total:</label>
-          <input type="text" id="total" />
+          <input type="text" id="total" readonly />
 
           <label for="nombre">GST:</label>
           <input type="text" id="discount" />
@@ -52,8 +55,15 @@
           <label for="nombre">Net Amt:</label>
           <input type="text" id="net-amount" />
         </div>
+
+        <div class="ctn-calc">
+          <button onclick="saveInvoice()" class="btn-factures">Guardar Factura</button>
+        </div>
       </div>
     </div>
+
+
+
 
     <script src="script.js"></script>
   </body>
