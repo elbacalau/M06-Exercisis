@@ -36,7 +36,6 @@ function deleteRow(boton) {
   }
 
   updateTotal();
-
 }
 
 
@@ -107,6 +106,7 @@ function calcNetAmount(total) {
 
 }
 
+// actualiza el net amount segun el descuento
 document.getElementById("discount").oninput = function () {
   let total = parseFloat(document.getElementById("total").value) || 0;
   calcAmount(total);
@@ -115,10 +115,6 @@ document.getElementById("discount").oninput = function () {
 
 function saveInvoice() {
   
-  if (!validateForm()) {
-    // si no es valid es para
-    return;
-  }
 
   let customer = document.getElementById("customer").value;
   let address = document.getElementById("address").value;
@@ -129,9 +125,11 @@ function saveInvoice() {
   let discount = document.getElementById("discount").value;
   let netAmount = document.getElementById("net-amount").value;
 
+
+
+
   let tableData = [];
   let table = document.getElementById("table");
-
 
   for (let i = 1; i < table.rows.length; i++) {
     let row = table.rows[i];
@@ -142,6 +140,9 @@ function saveInvoice() {
 
     tableData.push({ particular, qty, rate, amount });
   }
+
+  console.log(tableData);
+  
 
   let invoice = {
     customer,
@@ -157,7 +158,6 @@ function saveInvoice() {
 
 
   localStorage.setItem("invoice", JSON.stringify(invoice));
-  console.log("Invoice saved successfully");
   console.log(invoice);
   
   
