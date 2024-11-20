@@ -1,3 +1,4 @@
+// agregar una fila
 function addRow() {
   let tabla = document.getElementById("table");
 
@@ -22,6 +23,8 @@ function addRow() {
 
 }
 
+
+// eliminar una fila
 function deleteRow(boton) {
   let fila = boton.parentNode.parentNode;
   fila.parentNode.removeChild(fila);
@@ -36,19 +39,23 @@ function deleteRow(boton) {
 
 }
 
+
+// calcular l'import de la fila
 function updateAmount(input) {
   let fila = input.parentNode.parentNode;
   
   let qty = parseFloat(fila.querySelector('input[name="qty"]').value) || 0;
   let rate = parseFloat(fila.querySelector('input[name="rate"]').value) || 0;
   let amount = qty * rate;
-  fila.querySelector('input[name="amount"]').value = amount.toFixed(2);
 
+
+  fila.querySelector('input[name="amount"]').value = amount.toFixed(2);
   updateTotal();
   
 }
 
 
+// calcula y actualiza el total
 function updateTotal() {
   let tabla = document.getElementById("table");
   let total = document.getElementById("total");
@@ -57,6 +64,7 @@ function updateTotal() {
 
   for (let i = 1; i < tabla.rows.length; i++) {
     let amount = tabla.rows[i].cells[4].querySelector('input[name="amount"]').value;
+    console.log('amount', amount);
 
     if (amount) {
       totalValue += parseFloat(amount);
@@ -106,6 +114,12 @@ document.getElementById("discount").oninput = function () {
 
 
 function saveInvoice() {
+  
+  if (!validateForm()) {
+    // si no es valid es para
+    return;
+  }
+
   let customer = document.getElementById("customer").value;
   let address = document.getElementById("address").value;
   let city = document.getElementById("city").value;
